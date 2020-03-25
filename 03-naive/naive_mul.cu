@@ -1,6 +1,5 @@
 #include <iostream>
 #include <math.h>
-// Kernel function to add the elements of two arrays
 __global__
 void Dense(int n, int m, float *W, float *b, float *x, float* y)
 {
@@ -37,7 +36,7 @@ int main(void)
      for(int i=0;i<N;i++) {
          W[j*N+i]=1;
 }
-  //for(int t=0;t<1000;t++)
+  for(int t=0;t<1000;t++)
        Dense<<<numBlocks, blockSize>>>(N, M, W, b, x, y);
 
   // Wait for GPU to finish before accessing on host
